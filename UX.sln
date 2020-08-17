@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UX", "UX\UX.csproj", "{EFD04D38-C57C-4147-A627-99788F186681}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UX", "UX\UX.csproj", "{EFD04D38-C57C-4147-A627-99788F186681}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UXTests", "UXTests\UXTests.csproj", "{2FEF6C9D-0592-4336-9CD3-847DE253A92C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EFD04D38-C57C-4147-A627-99788F186681}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFD04D38-C57C-4147-A627-99788F186681}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFD04D38-C57C-4147-A627-99788F186681}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FEF6C9D-0592-4336-9CD3-847DE253A92C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FEF6C9D-0592-4336-9CD3-847DE253A92C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FEF6C9D-0592-4336-9CD3-847DE253A92C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FEF6C9D-0592-4336-9CD3-847DE253A92C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
