@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>UX.Formatting</AssemblyName>
-    <RootNamespace>Crews.UX.Formatting</RootNamespace>
+    <AssemblyName>UX</AssemblyName>
+    <RootNamespace>Crews.UX</RootNamespace>
   </PropertyGroup>
 
 </Project>
