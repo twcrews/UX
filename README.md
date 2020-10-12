@@ -1,2 +1,2 @@
 # UX
-A class library containing useful functions for interface development.
+A .NET C# class library containing useful functions for interface development.
