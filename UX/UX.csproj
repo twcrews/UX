@@ -6,4 +6,8 @@
     <RootNamespace>Crews.UX</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\repo\Crews\UX\UX\UX.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>

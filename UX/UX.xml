@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UX</name>
+    </assembly>
+    <members>
+        <member name="T:Crews.UX.Formatting">
+            <summary>
+            Provides a collection of static functions for formatting strings in a UX/UI.
+            </summary>
+        </member>
+        <member name="M:Crews.UX.Formatting.NumberAsText(System.Int32)">
+            <summary>
+            Formats an integer between 1 and 99 (inclusive) as text. 
+            Other integers return a ToString of themselves.
+            </summary>
+            <param name="number">The integer to format.</param>
+            <returns>Returns a string representing the number.</returns>
+        </member>
+        <member name="M:Crews.UX.Formatting.FormatQuantity(System.Double,System.String,System.Boolean)">
+            <summary>
+            Formats a double with a given unit.
+            </summary>
+            <param name="quantity">The value of the quantity.</param>
+            <param name="unit">The unit of measurement.</param>
+            <param name="textQuantity">Indicates whether the quantity number should be converted to text.</param>
+            <returns>Returns a string representing the formatted quantity and unit of measurement.</returns>
+        </member>
+        <member name="M:Crews.UX.Formatting.FormatQuantity(System.Int32,System.String,System.Boolean)">
+            <summary>
+            Formats an integer with a given unit.
+            </summary>
+            <param name="quantity">The value of the quantity.</param>
+            <param name="unit">The unit of measurement.</param>
+            <param name="textQuantity">Indicates whether the quantity number should be converted to text.</param>
+            <returns>Returns a string representing the formatted quantity and unit of measurement.</returns>
+        </member>
+        <member name="M:Crews.UX.Formatting.FormatQuantity(System.Double,System.String)">
+            <summary>
+            Formats a double with a given unit.
+            </summary>
+            <param name="quantity">The value of the quantity.</param>
+            <param name="unit">The unit of measurement.</param>
+            <param name="textQuantity">Indicates whether the quantity number should be converted to text.</param>
+            <returns>Returns a string representing the formatted quantity and unit of measurement.</returns>
+        </member>
+        <member name="M:Crews.UX.Formatting.FormatQuantity(System.Int32,System.String)">
+            <summary>
+            Formats an integer with a given unit.
+            </summary>
+            <param name="quantity">The value of the quantity.</param>
+            <param name="unit">The unit of measurement.</param>
+            <returns>Returns a string representing the formatted quantity and unit of measurement.</returns>
+        </member>
+        <member name="M:Crews.UX.Formatting.FormatTimespan(System.TimeSpan,Crews.UX.TimeUnit,System.Boolean)">
+            <summary>
+            Formats a TimeSpan as text.
+            </summary>
+            <param name="timeSpan">The TimeSpan object to format.</param>
+            <param name="precision">The TimeUnit of precision to use.</param>
+            <param name="textQuantity">Indicates whether the TimeSpan values should be converted to text.</param>
+            <returns>Returns a string representation of the TimeSpan.</returns>
+        </member>
+        <member name="M:Crews.UX.Formatting.FormatTimespan(System.TimeSpan,Crews.UX.TimeUnit)">
+            <summary>
+            Formats a TimeSpan as text.
+            </summary>
+            <param name="timeSpan">The TimeSpan object to format.</param>
+            <param name="precision">The TimeUnit of precision to use.</param>
+            <returns>Returns a string representation of the TimeSpan.</returns>
+        </member>
+        <member name="M:Crews.UX.Formatting.FormatTimespan(System.TimeSpan)">
+            <summary>
+            Formats a TimeSpan as text.
+            </summary>
+            <param name="timeSpan">The TimeSpan object to format.</param>
+            <returns>Returns a string representation of the TimeSpan.</returns>
+        </member>
+        <member name="M:Crews.UX.Formatting.Capitalize(System.String,System.Boolean)">
+            <summary>
+            Capitalizes one or all words in a string.
+            </summary>
+            <param name="text">The string to capitalize.</param>
+            <param name="allWords">Indicates whether all words detected should be capitalized.</param>
+            <returns>Returns a formatted string.</returns>
+        </member>
+        <member name="M:Crews.UX.Formatting.Capitalize(System.String)">
+            <summary>
+            Capitalizes one or all words in a string.
+            </summary>
+            <param name="text">The string to capitalize.</param>
+            <returns>Returns a formatted string.</returns>
+        </member>
+        <member name="T:Crews.UX.TimeUnit">
+            <summary>
+            A class used as a "string enumerable" type for passing units of time.
+            </summary>
+        </member>
+        <member name="P:Crews.UX.TimeUnit.Value">
+            <summary>
+            Stored value of the class.
+            </summary>
+        </member>
+        <member name="M:Crews.UX.TimeUnit.ToString">
+            <summary>
+             Built-in ToString method override.
+            </summary>
+            <returns>Returns a string representation of the class.</returns>
+        </member>
+        <member name="M:Crews.UX.TimeUnit.op_Implicit(Crews.UX.TimeUnit)~System.String">
+            <summary>
+            Type cast override for strings.
+            </summary>
+            <param name="unit">The TimeUnit object to use in the override.</param>
+        </member>
+        <member name="P:Crews.UX.TimeUnit.Year">
+            <summary>
+            TimeUnit object representing a year.
+            </summary>
+        </member>
+        <member name="P:Crews.UX.TimeUnit.Month">
+            <summary>
+            TimeUnit object representing a month.
+            </summary>
+        </member>
+        <member name="P:Crews.UX.TimeUnit.Week">
+            <summary>
+            TimeUnit object representing a week.
+            </summary>
+        </member>
+        <member name="P:Crews.UX.TimeUnit.Day">
+            <summary>
+            TimeUnit object representing a day.
+            </summary>
+        </member>
+        <member name="P:Crews.UX.TimeUnit.Hour">
+            <summary>
+            TimeUnit object representing an hour.
+            </summary>
+        </member>
+        <member name="P:Crews.UX.TimeUnit.Minute">
+            <summary>
+            TimeUnit object representing a minute.
+            </summary>
+        </member>
+        <member name="P:Crews.UX.TimeUnit.Second">
+            <summary>
+            TimeUnit object representing a second.
+            </summary>
+        </member>
+    </members>
+</doc>
