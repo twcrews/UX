@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 
 namespace Crews.UX
-{
+{  
+    /// <summary>
+    /// Provides a collection of static functions for formatting strings in a UX/UI.
+    /// </summary>
     public static class Formatting
     {
         private static readonly Dictionary<int, string> TextNumbers = new Dictionary<int, string>()
@@ -14,10 +17,11 @@ namespace Crews.UX
             {15, "fifteen"}, {16, "sixteen"}, {17, "seventeen"}, {18, "eighteen"}, {19, "nineteen"}
         };
 
-        private static readonly Dictionary<string, int> PrecisionMap = new Dictionary<string, int>()
+        private static readonly Dictionary<string, int> PrecisionMap = 
+            new Dictionary<string, int>()
         {
-            {TimeUnit.Year, 0}, {TimeUnit.Month, 1}, {TimeUnit.Week, 2}, {TimeUnit.Day, 3 }, {TimeUnit.Hour, 4}, 
-            {TimeUnit.Minute, 5}, {TimeUnit.Second, 6}
+            {TimeUnit.Year, 0}, {TimeUnit.Month, 1}, {TimeUnit.Week, 2}, {TimeUnit.Day, 3 }, 
+                {TimeUnit.Hour, 4}, {TimeUnit.Minute, 5}, {TimeUnit.Second, 6}
         };
 
         /// <summary>
@@ -59,8 +63,12 @@ namespace Crews.UX
         /// </summary>
         /// <param name="quantity">The value of the quantity.</param>
         /// <param name="unit">The unit of measurement.</param>
-        /// <param name="textQuantity">Indicates whether the quantity number should be converted to text.</param>
-        /// <returns>Returns a string representing the formatted quantity and unit of measurement.</returns>
+        /// <param name="textQuantity">
+        /// Indicates whether the quantity number should be converted to text.
+        /// </param>
+        /// <returns>
+        /// Returns a string representing the formatted quantity and unit of measurement.
+        /// </returns>
         public static string FormatQuantity(double quantity, string unit, bool textQuantity)
         {
             string prefix = string.Empty;
@@ -113,35 +121,36 @@ namespace Crews.UX
         /// </summary>
         /// <param name="quantity">The value of the quantity.</param>
         /// <param name="unit">The unit of measurement.</param>
-        /// <param name="textQuantity">Indicates whether the quantity number should be converted to text.</param>
-        /// <returns>Returns a string representing the formatted quantity and unit of measurement.</returns>
-        public static string FormatQuantity(int quantity, string unit, bool textQuantity)
-        {
-            return FormatQuantity((double)quantity, unit, textQuantity);
-        }
+        /// <param name="textQuantity">
+        /// Indicates whether the quantity number should be converted to text.
+        /// </param>
+        /// <returns>
+        /// Returns a string representing the formatted quantity and unit of measurement.
+        /// </returns>
+        public static string FormatQuantity(int quantity, string unit, bool textQuantity) =>
+            FormatQuantity((double)quantity, unit, textQuantity);
 
         /// <summary>
         /// Formats a double with a given unit.
         /// </summary>
         /// <param name="quantity">The value of the quantity.</param>
         /// <param name="unit">The unit of measurement.</param>
-        /// <param name="textQuantity">Indicates whether the quantity number should be converted to text.</param>
-        /// <returns>Returns a string representing the formatted quantity and unit of measurement.</returns>
-        public static string FormatQuantity(double quantity, string unit)
-        {
-            return FormatQuantity(quantity, unit, false);
-        }
+        /// <returns>
+        /// Returns a string representing the formatted quantity and unit of measurement.
+        /// </returns>
+        public static string FormatQuantity(double quantity, string unit) =>
+            FormatQuantity(quantity, unit, false;
 
         /// <summary>
         /// Formats an integer with a given unit.
         /// </summary>
         /// <param name="quantity">The value of the quantity.</param>
         /// <param name="unit">The unit of measurement.</param>
-        /// <returns>Returns a string representing the formatted quantity and unit of measurement.</returns>
-        public static string FormatQuantity(int quantity, string unit)
-        {
-            return FormatQuantity((double)quantity, unit, false);
-        }
+        /// <returns>
+        /// Returns a string representing the formatted quantity and unit of measurement.
+        /// </returns>
+        public static string FormatQuantity(int quantity, string unit) =>
+            FormatQuantity((double)quantity, unit, false);
 
         #endregion
 
@@ -152,9 +161,14 @@ namespace Crews.UX
         /// </summary>
         /// <param name="timeSpan">The TimeSpan object to format.</param>
         /// <param name="precision">The TimeUnit of precision to use.</param>
-        /// <param name="textQuantity">Indicates whether the TimeSpan values should be converted to text.</param>
+        /// <param name="textQuantity">
+        /// Indicates whether the TimeSpan values should be converted to text.
+        /// </param>
         /// <returns>Returns a string representation of the TimeSpan.</returns>
-        public static string FormatTimespan(TimeSpan timeSpan, TimeUnit precision, bool textQuantity)
+        public static string FormatTimespan(
+            TimeSpan timeSpan, 
+            TimeUnit precision, 
+            bool textQuantity)
         {
             if (timeSpan.TotalSeconds <= 0)
             {
@@ -213,7 +227,8 @@ namespace Crews.UX
             if (PrecisionMap[precision] >= 4)
             {
                 returnString += timeSpan.Hours > 0 ?
-                    FormatQuantity(timeSpan.Hours, TimeUnit.Hour, textQuantity) + ", " : string.Empty;
+                    FormatQuantity(timeSpan.Hours, TimeUnit.Hour, textQuantity) + 
+                    ", " : string.Empty;
                 if (timeSpan.TotalHours < 1 && PrecisionMap[precision] == 4)
                 {
                     return FormatQuantity(timeSpan.TotalHours, TimeUnit.Hour, textQuantity);
@@ -223,7 +238,8 @@ namespace Crews.UX
             if (PrecisionMap[precision] >= 5)
             {
                 returnString += timeSpan.Minutes > 0 ?
-                    FormatQuantity(timeSpan.Minutes, TimeUnit.Minute, textQuantity) + ", " : string.Empty;
+                    FormatQuantity(timeSpan.Minutes, TimeUnit.Minute, textQuantity) + 
+                    ", " : string.Empty;
                 if (timeSpan.TotalMinutes < 1 && PrecisionMap[precision] == 5)
                 {
                     return FormatQuantity(timeSpan.TotalMinutes, TimeUnit.Minute, textQuantity);
@@ -255,20 +271,16 @@ namespace Crews.UX
         /// <param name="timeSpan">The TimeSpan object to format.</param>
         /// <param name="precision">The TimeUnit of precision to use.</param>
         /// <returns>Returns a string representation of the TimeSpan.</returns>
-        public static string FormatTimespan(TimeSpan timeSpan, TimeUnit precision)
-        {
-            return FormatTimespan(timeSpan, precision, false);
-        }
+        public static string FormatTimespan(TimeSpan timeSpan, TimeUnit precision) =>
+            FormatTimespan(timeSpan, precision, false);
 
         /// <summary>
         /// Formats a TimeSpan as text.
         /// </summary>
         /// <param name="timeSpan">The TimeSpan object to format.</param>
         /// <returns>Returns a string representation of the TimeSpan.</returns>
-        public static string FormatTimespan(TimeSpan timeSpan)
-        {
-            return FormatTimespan(timeSpan, TimeUnit.Second, false);
-        }
+        public static string FormatTimespan(TimeSpan timeSpan) =>
+            FormatTimespan(timeSpan, TimeUnit.Second, false;
 
         #endregion
 
@@ -278,7 +290,9 @@ namespace Crews.UX
         /// Capitalizes one or all words in a string.
         /// </summary>
         /// <param name="text">The string to capitalize.</param>
-        /// <param name="allWords">Indicates whether all words detected should be capitalized.</param>
+        /// <param name="allWords">
+        /// Indicates whether all words detected should be capitalized.
+        /// </param>
         /// <returns>Returns a formatted string.</returns>
         public static string Capitalize(string text, bool allWords)
         {
@@ -304,16 +318,11 @@ namespace Crews.UX
         /// </summary>
         /// <param name="text">The string to capitalize.</param>
         /// <returns>Returns a formatted string.</returns>
-        public static string Capitalize(string text)
-        {
-            return Capitalize(text, true);
-        }
+        public static string Capitalize(string text) => Capitalize(text, true);
 
-        private static string CapitalizeString(string text)
-        {
-            return char.ToUpper(text[0]).ToString() + (text.Length > 1 ?
-                text.Substring(1) : string.Empty);
-        }
+        private static string CapitalizeString(string text) => 
+            char.ToUpper(text[0]).ToString() + (text.Length > 1 ? 
+            text.Substring(1) : string.Empty);
 
         #endregion
     }

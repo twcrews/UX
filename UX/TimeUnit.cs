@@ -18,24 +18,15 @@ namespace Crews.UX
         ///  Built-in ToString method override.
         /// </summary>
         /// <returns>Returns a string representation of the class.</returns>
-        public override string ToString()
-        {
-            return Value;
-        }
+        public override string ToString() => Value;
 
         /// <summary>
         /// Type cast override for strings.
         /// </summary>
         /// <param name="unit">The TimeUnit object to use in the override.</param>
-        public static implicit operator string(TimeUnit unit)
-        {
-            return unit.Value;
-        }
+        public static implicit operator string(TimeUnit unit) => unit.Value;
 
-        private TimeUnit(string value) 
-        { 
-            Value = value; 
-        }
+        private TimeUnit(string value) => Value = value; 
 
         /// <summary>
         /// TimeUnit object representing a year.
